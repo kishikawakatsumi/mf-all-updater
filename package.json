@@ -13,6 +13,6 @@
     "fetch": "node index.js"
   },
   "devDependencies": {
-    "eslint": "7.0.0"
+    "eslint": "7.32.0"
   }
 }
