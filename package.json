@@ -10,7 +10,7 @@
   },
   "scripts": {
     "lint": "eslint *.js",
-    "fetch": "node index.js"
+    "fetch": "node --unhandled-rejections=strict index.js"
   },
   "devDependencies": {
     "eslint": "7.32.0"
