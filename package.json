@@ -6,7 +6,7 @@
   "author": "ABE Tomonori <tekiomo@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "puppeteer": "^3.0.0"
+    "puppeteer": "^10.0.0"
   },
   "scripts": {
     "lint": "eslint *.js",
