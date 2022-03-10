@@ -2,17 +2,17 @@
   "name": "mf-all-updater",
   "version": "2.0.0",
   "main": "index.js",
-  "repository": "git@github.com:tekiomo/mf-all-updater.git",
-  "author": "ABE Tomonori <tekiomo@gmail.com>",
+  "repository": "git@github.com:kishikawakatsumi/mf-all-updater.git",
   "license": "MIT",
-  "dependencies": {
-    "puppeteer": "^3.0.0"
-  },
   "scripts": {
     "lint": "eslint *.js",
     "fetch": "node --unhandled-rejections=strict index.js"
   },
   "devDependencies": {
     "eslint": "8.2.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "playwright": "^1.19.2"
   }
 }
