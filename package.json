@@ -9,7 +9,7 @@
     "fetch": "node --unhandled-rejections=strict index.js"
   },
   "devDependencies": {
-    "eslint": "8.2.0"
+    "eslint": "8.10.0"
   },
   "dependencies": {
     "dotenv": "^16.0.0",
