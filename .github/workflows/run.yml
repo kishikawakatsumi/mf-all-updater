@@ -18,4 +18,5 @@ jobs:
           set -ex
 
           npm ci
+          npx playwright install-deps chromium
           npm run fetch
