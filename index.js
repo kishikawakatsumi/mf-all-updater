@@ -4,27 +4,26 @@ const { chromium } = require("playwright");
 
 (async () => {
   const browser = await chromium.launch({ headless: false });
-  const context = await browser.newContext();
+
+  const context = await browser.newContext({
+    baseURL: "https://moneyforward.com",
+  });
+
   const page = await context.newPage();
-  await page.goto("https://moneyforward.com/");
+  await page.goto("/");
+
   await page.click('a[href="/sign_in"]');
+  await page
+    .locator(':nth-match(:text("メールアドレスでログイン"), 1)')
+    .click();
 
-  await page.goto(page.url());
-  const signinUrl = await page.evaluate(() =>
-    Array.from(
-      document.querySelectorAll(".buttonWrapper a:nth-child(1)"),
-      (a) => a.getAttribute("href")
-    )
-  );
-  await page.goto(`https://id.moneyforward.com${signinUrl[0]}`);
-
-  await page.type('input[type="email"]', process.env.EMAIL);
+  await page.fill('input[type="email"]', process.env.EMAIL);
   await page.click('input[type="submit"]');
 
-  await page.type('input[type="password"]', process.env.PASSWORD);
+  await page.fill('input[type="password"]', process.env.PASSWORD);
   await page.click('input[type="submit"]');
 
-  await page.goto("https://moneyforward.com/accounts");
+  await page.goto("/accounts");
 
   const buttonSelector =
     'input:not(disabled)[type="submit"][name="commit"][value="更新"]';
